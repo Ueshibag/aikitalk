@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aikido</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+
+<body>
+
+    <div id="mySidenav" class="sidenav">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="close_nav()">&times;</a>
+
+        <select id="grade_select"></select><br>
+
+        <select id="situation_select"></select><br>
+
+        <select id="attack_select"></select><br><br>
+
+        <label for="interval_select"><b>Intervalle</b></label>
+        <div class="wrapper">
+            <div class="range">
+                <input type="range" min="3" max="15" value="3" id="interval_select">
+                <div class="value" id="interval_value">3</div>
+            </div>
+        </div>
+
+        <label for="repetition_select"><b>Répétitions</b></label>
+        <div class="wrapper">
+            <div class="range">
+                <input type="range" min="0" max="5" value="0" id="repetition_select">
+                <div class="value" id="repetition_value">0</div>
+            </div>
+        </div>
+
+        <label for="kokyunage_select"><b>Kokyu Nage</b></label>
+        <div class="wrapper">
+            <div class="range">
+                <input type="range" min="1" max="8" value="1" id="kokyunage_select">
+                <div class="value" id="kokyunage_value">1</div>
+            </div>
+        </div>
+
+        <label><input type="checkbox" id="droite_gauche"><b>Droite & Gauche</b></label><br>
+        <label><input type="checkbox" id="aleatoire"><b>Aléatoire</b></label><br>
+
+        <fieldset>
+            <legend>Omote / Ura</legend>
+        
+            <div>
+                <input style="margin-top: 1%;" type="radio" id="omote_ura" name="omote_ura" value="omote_ura" checked>
+                <label for="omote_ura">Omote & Ura</label>
+            </div>
+        
+            <div>
+                <input style="margin-top: 1%;" type="radio" id="omote" name="omote_ura" value="omote">
+                <label for="omote">Omote</label>
+            </div>
+        
+            <div>
+                <input style="margin-top: 1%;" type="radio" id="ura" name="omote_ura" value="ura">
+                <label for="ura">Ura</label>
+            </div>
+
+            <div>
+                <input style="margin-top: 1%;" type="radio" id="non_spec" name="omote_ura" value="non_spec">
+                <label for="non_spec">Non spécifié</label>
+            </div>
+        </fieldset>
+    </div>
+
+    <div id="main">
+        <div id="header_area" style="font-size:32px; font-weight:600; cursor:pointer" onclick="open_nav()">&#9961; Aïkido</div>
+
+        <div id="session_text_area" contenteditable="false"></div>
+
+        <audio id="myAudio">
+            <source src="{{ url_for('static', filename='audio/temp.mp3') }}" type="audio/mpeg">
+            Votre navigateur ne supporte pas l'élément audio.
+        </audio>
+
+        <div id="button-container">
+            <button id="homeBtn" class="reset" onclick="build_session()">
+                <i class="fa-solid fa-house"></i>
+            </button>
+
+            <button id="startBtn" class="start" onclick="start_session()">
+                <i class="fas fa-play"></i>
+            </button>
+
+            <button id="pauseBtn" class="pause-resume" onclick="pause_session()" disabled>
+                <i class="fas fa-pause"></i>
+            </button>
+
+            <button id="stopBtn" class="stop" onclick="stop_session()" disabled>
+                <i class="fas fa-stop"></i>
+            </button>
+
+            <button id="helpBtn" class="help" onclick="display_user_manual()">
+                <i class="fas fa-circle-question"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

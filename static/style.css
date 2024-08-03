@@ -1,0 +1,284 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    justify-content: flex-start;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+    padding: 0.5rem;
+    background-color: #888; /* Couleur de fond solide */
+}
+
+.sidenav {
+    height: 100dvh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222 ;
+    overflow-x: hidden;
+    transition: 0.7s;
+    padding-top: 10px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav label {
+    margin-left: 15px;
+    color: #E0E0E0;
+}
+
+.sidenav select {
+    margin-left: 15px;
+    font-size: 16px;
+    text-align: center;
+    width: 50%;
+}
+
+.sidenav input {
+    margin-left: 15px;
+}
+
+/*
+# is an id selector, used to target a single specific element with a unique id,
+but . is a class selector used to target multiple elements with a particular class.
+
+To put it another way:
+
+    #foo {} will style the single element declared with an attribute id="foo"
+    .foo {} will style all elements with an attribute class="foo" (you can have multiple
+    classes assigned to an element too, just separate them with spaces, e.g. class="foo bar")
+*/
+#main {
+    transition: margin-left .5s;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls {
+    margin-top: 16px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+}
+
+select, input[type="number"] {
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    margin-top: 15px;
+}
+
+input[type="checkbox"] {
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    transform: scale(1.5);
+    accent-color: #f50;
+}
+
+/*****************************************************************************************/
+/*                                    SLIDER
+/*****************************************************************************************/
+
+input[type="range"] {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* creating a custom design */
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  border-radius: 15px;
+
+  /* New additions */
+  height: 6px;
+  background: #ccc;
+}
+
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* creating a custom design */
+  height: 15px;
+  width: 15px;
+  background-color: #f50;
+  border-radius: 50%;
+  border: none;
+
+  /* box-shadow: -407px 0 0 400px #f50; emove this line */
+  transition: .2s ease-in-out;
+}
+
+/* Thumb: Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  background-color: #f50;
+  border-radius: 50%;
+  border: none;
+  transition: .2s ease-in-out;
+}
+
+/* Hover, active & focus Thumb: Webkit */
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 10px rgba(255,85,0, .1)
+}
+input[type="range"]:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 13px rgba(255,85,0, .2)
+}
+input[type="range"]:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 13px rgba(255,85,0, .2)
+}
+
+/* Hover, active & focus Thumb: Firefox */
+
+input[type="range"]::-moz-range-thumb:hover {
+  box-shadow: 0 0 0 10px rgba(255,85,0, .1)
+}
+input[type="range"]:active::-moz-range-thumb {
+  box-shadow: 0 0 0 13px rgba(255,85,0, .2)
+}
+input[type="range"]:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 13px rgba(255,85,0, .2)
+}
+
+
+.wrapper {
+  max-width: 400px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.range {
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 4rem;
+  width: 80%;
+  padding: 0 5;
+}
+
+.value {
+  font-size: 20px;
+  width: 50px;
+  color: #818181;
+  text-align: center;
+}
+
+/************************************************************************/
+
+#header_area {
+  top: 0;
+  position: sticky;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 1000;
+  background-color: #888; /* Couleur de fond solide */
+}
+
+#session_text_area {
+  margin-top: 10px;
+  margin-bottom: 500px; /* Push buttons container down so that buttons are displayed at the bottom of the screen */
+  overflow-y: auto;
+  flex: 1;
+  padding: 20px;
+}
+
+#button-container {
+  bottom: 0;
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  padding: 10px 0;
+  z-index: 1000;
+  background-color: #888; /* Couleur de fond solide */
+}
+
+#button-container button {
+  flex-grow: 1;
+  padding: 10px 0;
+  transition: background-color 0.3s;
+}
+
+button {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(255, 85, 0);
+    color: white;
+}
+
+*:disabled {
+  cursor: default;
+  opacity: .5;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: .3;
+}
+
+/*
+Omote / Ura radio buttons
+*/
+legend {
+  margin-left: 15px;
+  font-weight: 600;
+  color: #E0E0E0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+fieldset {
+  margin-left: 15px;
+  margin-right: 15px;
+  border:  1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+input[type='radio'] {
+  accent-color: #f50;
+  transform: scale(1.5);
+  margin-bottom: 10px;
+}
