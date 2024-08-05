@@ -1,5 +1,5 @@
 
-const Version = "1.1.2";
+const VERSION = "1.1.2";
 
 const GET_READY_TXT = 'Préparez vous';
 
@@ -398,7 +398,7 @@ function start_session() {
         }
 
         // minus 2 to take trailing <br>s into account
-        if (i == session_text.length - 2) {
+        if (i == session_text.length - 3) {
 
             // End of session; manage and store techniques
             techniques = manage_techniques(techniques);
@@ -708,7 +708,7 @@ async function build_session() {
                 text_area.innerHTML += "<div>"; // technique
                 let tech_name = data[situation][attack_name][i++];
                 var underscored_tech_name = tech_name.replace(/ /g, '_');
-                text_area.innerHTML += `<label><input style="margin-left: 50px;" type="checkbox" ${checked_if_not_jyu_waza(tech_name)} id="${underscored_tech_name}" class="child-checkbox ${underscored_attack_name}">${bold_if_jyu_waza(tech_name)}</label>`;
+                text_area.innerHTML += `<label><input style="margin-left: 20px;" type="checkbox" ${checked_if_not_jyu_waza(tech_name)} id="${underscored_tech_name}" class="child-checkbox ${underscored_attack_name}">${bold_if_jyu_waza(tech_name)}</label>`;
                 text_area.innerHTML += "</div>"; // technique
             }
 
@@ -730,13 +730,15 @@ async function build_session() {
             text_area.innerHTML += "<div>"; // technique
             let tech_name = data[situation][attack_name][i++];
             var underscored_tech_name = tech_name.replace(/ /g, '_');
-            text_area.innerHTML += `<label><input style="margin-left: 50px;" type="checkbox" ${checked_if_not_jyu_waza(tech_name)} id="${underscored_tech_name}" class="child-checkbox ${underscored_attack_name}">${bold_if_jyu_waza(tech_name)}</label>`;
+            text_area.innerHTML += `<label><input style="margin-left: 20px;" type="checkbox" ${checked_if_not_jyu_waza(tech_name)} id="${underscored_tech_name}" class="child-checkbox ${underscored_attack_name}">${bold_if_jyu_waza(tech_name)}</label>`;
             text_area.innerHTML += "</div>"; // technique
         }
 
         text_area.innerHTML += "</div>"; // attack
         text_area.innerHTML += '<br>';
     }
+
+    text_area.innerHTML += '<img src="static/images/aikido.png" alt="aikido" style="margin-top: 20px" />';
 
     document.getElementById('startBtn').disabled = false;
     document.getElementById('helpBtn').disabled = false;
@@ -932,5 +934,5 @@ function display_user_manual() {
     text_area.innerHTML += '<b>Aléatoire</b><br>techniques demandées dans un ordre aléatoire<br><br>';
     text_area.innerHTML += '<b>Omote / Ura</b><br>techniques demandées sous la forme choisie<br><br>';
 
-    text_area.innerHTML += `<br><br><label style="font-size: 12px;">Version ${Version}</label>`;
+    text_area.innerHTML += `<br><br><label style="font-size: 12px;">Version ${VERSION}</label>`;
 }

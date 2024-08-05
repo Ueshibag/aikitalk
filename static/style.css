@@ -4,7 +4,7 @@ body {
     height: 100dvh;
     justify-content: flex-start;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: auto;
+    margin: 5px;
     padding: 0.5rem;
     background-color: #888; /* Couleur de fond solide */
 }
@@ -46,13 +46,14 @@ body {
 .sidenav label {
     margin-left: 15px;
     color: #E0E0E0;
+    width: 200px;
 }
 
 .sidenav select {
     margin-left: 15px;
     font-size: 16px;
     text-align: center;
-    width: 50%;
+    width: 92%;
 }
 
 .sidenav input {
@@ -96,7 +97,7 @@ select, input[type="number"] {
 }
 
 input[type="checkbox"] {
-    margin-left: 20px;
+    margin-left: 0px;
     margin-right: 10px;
     margin-bottom: 15px;
     margin-top: 15px;
@@ -173,25 +174,20 @@ input[type="range"]:focus::-moz-range-thumb {
   box-shadow: 0 0 0 13px rgba(255,85,0, .2)
 }
 
-
 .wrapper {
-  max-width: 400px;
   width: 100%;
   height: 60px;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
-  margin: 0 auto;
+  align-items: center;
 }
 
 .range {
   display: flex;
   align-items: center;
-  max-width: 500px;
-  margin: 0 auto;
+  margin: 0;
   height: 4rem;
-  width: 80%;
-  padding: 0 5;
+  width: 95%;
 }
 
 .value {
@@ -271,10 +267,11 @@ legend {
 
 fieldset {
   margin-left: 15px;
-  margin-right: 15px;
+  margin-top: 20px;
   border:  1px solid #ccc;
   border-radius: 5px;
   padding: 5px;
+  width: 50%;
 }
 
 input[type='radio'] {
