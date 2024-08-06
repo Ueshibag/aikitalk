@@ -1,5 +1,5 @@
 
-const VERSION = "1.1.2";
+const VERSION = "1.1.3";
 
 const GET_READY_TXT = 'Préparez vous';
 
@@ -319,11 +319,9 @@ function set_session_text_area_content_enabled() {
 
 function uncheck_jyu_wazas() {
 
-    console.log("uncheck_jyu_wazas");
     var childNodes = document.getElementById("session_text_area").getElementsByTagName('*');
     for (var node of childNodes) {
 
-        console.log(node.textContent);
         if (node.textContent.toLowerCase() == "jyu waza") {
             node.firstChild.checked = false;
         } else if (node.firstChild != null) {
@@ -598,14 +596,12 @@ function pause_session() {
     if (!paused) {
 
         // Pause
-        console.log("  pause");
         clearTimeout(timeoutID);
         document.getElementById('pauseBtn').innerHTML = '<i class="fas fa-play"></i>';
 
     } else {
 
         // Resume
-        console.log("  resume");
         const intervalValue = document.getElementById('interval_select').value * 1000;
         document.getElementById('pauseBtn').innerHTML = '<i class="fas fa-pause"></i>';
         timeoutID = setTimeout(play_technique, intervalValue);
