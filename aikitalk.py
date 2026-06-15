@@ -8,7 +8,9 @@ speech_dict = {
     'ai': 'aille',
     'aiki': 'aïki',
     'chudan': 'tchoudanne',
+    'futari': 'foutari',
     'giri': 'guiri',
+    'hanmi': 'hannemi',
     'hiji': 'hidji',
     'ikkyo': 'ikyo',
     'ju': 'jou',
@@ -19,6 +21,8 @@ speech_dict = {
     'nage': 'nagué',
     'omote': 'omoté',
     'ryote': 'rioté',
+    'sokumen': 'sokoumen',
+    'suwari': 'souwari',
     'tachi': 'tatchi',
     'tenchi': 'tènchi',
     'uchi': 'outchi',
@@ -121,8 +125,6 @@ def get_techniques_list(waza: str, attack: str, randomize: int) -> list:
     :param randomize: if set, the order of techniques is randomized
     :return list of applicable techniques in this situation, on this attack
     """
-    # TODO: if ju wazas present in list, they should be asked after all other techniques
-    # TODO: even if randomize is set
     global config
     techs = config[waza][attack].replace('\n', '').split(',')
 

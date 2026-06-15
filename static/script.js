@@ -1,5 +1,5 @@
 
-const VERSION = "1.1.3";
+const VERSION = "1.2.0";
 
 const GET_READY_TXT = 'Préparez vous';
 
@@ -509,8 +509,9 @@ async function play_technique() {
 
         const text = tts[current_tts_index];
 
-        // Call the 'speak' Flask route with the 'text' parameter.
-        const response = await fetch(`/speak?text=${encodeURIComponent(text)}`);
+        // Call the 'speak' Flask route with the 'text' and 'voice' parameters.
+        const voice = document.querySelector('input[name="voix"]:checked').value;
+        const response = await fetch(`/speak?text=${encodeURIComponent(text)}&voice=${encodeURIComponent(voice)}`);
         const blob = await response.blob();
         
         // Get the technique.mp3 file from blob.
@@ -929,6 +930,7 @@ function display_user_manual() {
     text_area.innerHTML += '<b>Droite & Gauche</b><br>techniques demandées avec exécution des deux côtés<br><br>';
     text_area.innerHTML += '<b>Aléatoire</b><br>techniques demandées dans un ordre aléatoire<br><br>';
     text_area.innerHTML += '<b>Omote / Ura</b><br>techniques demandées sous la forme choisie<br><br>';
+    text_area.innerHTML += '<b>Voix</b><br>techniques demandées par une voix féminine ou masculine<br><br>';
 
     text_area.innerHTML += `<br><br><label style="font-size: 12px;">Version ${VERSION}</label>`;
 }
