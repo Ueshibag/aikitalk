@@ -1,7 +1,10 @@
 # Changelog
 
 
-## [Unreleased]
+## [1.2.0] - 2026-06-16
+### Added
+- Les techniques peuvent être demandées avec une voix féminine ou masculine.
+- email de contact ajouté
 
 ## [1.1.2] - 2024-08-02
 ### Fixed

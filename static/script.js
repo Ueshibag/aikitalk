@@ -1,5 +1,6 @@
 
 const VERSION = "1.2.0";
+const EMAIL = "gradaiki.yixjv@silomails.com";
 
 const GET_READY_TXT = 'Préparez vous';
 
@@ -930,7 +931,9 @@ function display_user_manual() {
     text_area.innerHTML += '<b>Droite & Gauche</b><br>techniques demandées avec exécution des deux côtés<br><br>';
     text_area.innerHTML += '<b>Aléatoire</b><br>techniques demandées dans un ordre aléatoire<br><br>';
     text_area.innerHTML += '<b>Omote / Ura</b><br>techniques demandées sous la forme choisie<br><br>';
-    text_area.innerHTML += '<b>Voix</b><br>techniques demandées par une voix féminine ou masculine<br><br>';
+    text_area.innerHTML += '<b>Voix</b><br>techniques demandées par une voix féminine ou masculine<br><br><br><br>';
+
+    text_area.innerHTML += `<b><label>Contact :</b> ${EMAIL}</label><br><br>`;
 
     text_area.innerHTML += `<br><br><label style="font-size: 12px;">Version ${VERSION}</label>`;
 }
