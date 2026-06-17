@@ -1,7 +1,8 @@
 
+
 from flask import Flask, jsonify, render_template, request, send_file
-import edge_tts
-import asyncio
+from gtts import gTTS
+
 import os
 
 import aikitalk
@@ -50,19 +51,14 @@ def get_techniques():
 
 @app.route('/speak')
 def speak():
+    """
+    Creates a MP3 file from the text argument and returns the MP3 file.
+    """
     text = request.args.get('text')
-    voice = request.args.get('voice', 'fr-FR-DeniseNeural')  # female by default
-    speech_text = aikitalk.get_speech_of_sentence(text.lower())
+
+    tts = gTTS(text=aikitalk.get_speech_of_sentence(text.lower()), lang='fr')
     filename = os.path.join(AUDIO_FOLDER, 'temp.mp3')
-
-    async def generate():
-        communicate = edge_tts.Communicate(
-            speech_text,
-            voice=voice
-        )
-        await communicate.save(filename)
-
-    asyncio.run(generate())
+    tts.save(filename)
     return send_file(filename, as_attachment=True, download_name='technique.mp3', mimetype='audio/mpeg')
 
 

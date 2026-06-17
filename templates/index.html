@@ -6,12 +6,9 @@
     <title>Aikido</title>
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 
 <body>
 
@@ -73,20 +70,6 @@
             <div>
                 <input style="margin-top: 1%;" type="radio" id="non_spec" name="omote_ura" value="non_spec">
                 <label for="non_spec">Non spécifié</label>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Voix</legend>
-
-            <div>
-                <input style="margin-top: 1%;" type="radio" id="voix_feminine" name="voix" value="fr-FR-DeniseNeural" checked>
-                <label for="voix_feminine">Féminine</label>
-            </div>
-
-            <div>
-                <input style="margin-top: 1%;" type="radio" id="voix_masculine" name="voix" value="fr-FR-HenriNeural">
-                <label for="voix_masculine">Masculine</label>
             </div>
         </fieldset>
     </div>

@@ -6,7 +6,8 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 5px;
     padding: 0.5rem;
-    background-color: #888; /* Couleur de fond solide */
+    background-color: #888;
+    color: #222;
 }
 
 .sidenav {

@@ -509,10 +509,7 @@ async function play_technique() {
     if (current_tts_index < tts.length) {
 
         const text = tts[current_tts_index];
-
-        // Call the 'speak' Flask route with the 'text' and 'voice' parameters.
-        const voice = document.querySelector('input[name="voix"]:checked').value;
-        const response = await fetch(`/speak?text=${encodeURIComponent(text)}&voice=${encodeURIComponent(voice)}`);
+        const response = await fetch(`/speak?text=${encodeURIComponent(text)}`);
         const blob = await response.blob();
         
         // Get the technique.mp3 file from blob.
@@ -930,8 +927,7 @@ function display_user_manual() {
     text_area.innerHTML += '<b>Kokyu Nage</b><br>Nombre de Kokyu Nage à exécuter [1...8] (Dépend du grade)<br><br>';
     text_area.innerHTML += '<b>Droite & Gauche</b><br>techniques demandées avec exécution des deux côtés<br><br>';
     text_area.innerHTML += '<b>Aléatoire</b><br>techniques demandées dans un ordre aléatoire<br><br>';
-    text_area.innerHTML += '<b>Omote / Ura</b><br>techniques demandées sous la forme choisie<br><br>';
-    text_area.innerHTML += '<b>Voix</b><br>techniques demandées par une voix féminine ou masculine<br><br><br><br>';
+    text_area.innerHTML += '<b>Omote / Ura</b><br>techniques demandées sous la forme choisie<br><br><br><br>';
 
     text_area.innerHTML += `<b><label>Contact :</b> ${EMAIL}</label><br><br>`;
 

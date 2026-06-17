@@ -24,5 +24,4 @@ Click the **Start** button and the app tells you the techniques you have to exec
 - **Droite & Gauche** : each technique has to be executed on the right and on the left.
 - **Aléatoire** : techniques are said randomly if this option is checked.
 - **Omote / Ura** : some techniques such as ikkyo, nikyo, sankyo, yonkyo or shiho nage have omote and ura forms. This option lets you select a specific form or even no particular request.
-- **Voix** : techniques names are said with a female or male voice
 
